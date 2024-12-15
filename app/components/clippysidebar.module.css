@@ -1,0 +1,106 @@
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 30px; /* Leave space for the Windows taskbar */
+  bottom: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #c0c0c0;
+  border-left: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.clippyHeader {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.chatContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  margin: 4px;
+  border: 2px solid;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.message {
+  padding: 8px;
+  border-radius: 4px;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.userMessage {
+  background-color: #e8e8e8;
+  align-self: flex-end;
+  border: 1px solid #808080;
+}
+
+.assistantMessage {
+  background-color: #d8d8d8;
+  align-self: flex-start;
+  border: 1px solid #808080;
+}
+
+.loadingMessage {
+  align-self: center;
+  color: #808080;
+  font-style: italic;
+}
+
+.inputContainer {
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  background-color: #c0c0c0;
+  margin-top: auto;
+}
+
+.input {
+  flex: 1;
+  padding: 4px 8px;
+  border: 2px solid;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  background-color: white;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.sendButton {
+  padding: 4px 12px;
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  font-family: 'MS Sans Serif', sans-serif;
+  cursor: pointer;
+}
+
+.sendButton:active {
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+}

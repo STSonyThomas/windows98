@@ -1,0 +1,165 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000046 0%, #1CB5E0 100%);
+  font-family: 'MS Sans Serif', sans-serif;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #000;
+  background: linear-gradient(to bottom, #000000 0%, #1e539e 50%, #1e539e 100%);
+  border-bottom: 2px solid #ffd700;
+}
+
+.windowsLogo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+.welcome {
+  color: white;
+  font-size: 48px;
+  font-family: 'Segoe Script', cursive;
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  background: #000080;
+  color: white;
+  padding: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modalContent {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.form {
+  flex: 1;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 3px 5px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: white;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 14px;
+}
+
+.input:focus {
+  outline: 1px solid #000080;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.button {
+  min-width: 75px;
+  padding: 4px 8px;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  background: #c0c0c0;
+  color: black;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 5px 7px 3px 9px;
+}
+
+.hint {
+  background: #ffffe1;
+  border: 1px solid #808080;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.headerIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.datetime {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 14px;
+  text-align: right;
+  z-index: 1;
+}
+
+.date {
+  font-size: 12px;
+  opacity: 0.9;
+}
