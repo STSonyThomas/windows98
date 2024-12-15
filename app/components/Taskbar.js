@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './taskbar.module.css';
 import { useRouter } from 'next/navigation';
+import StartMenu from './StartMenu'; // Assuming StartMenu component is in the same directory
 
 export default function Taskbar({ 
   windows = [], 
@@ -12,6 +13,7 @@ export default function Taskbar({
 }) {
   const router = useRouter();
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+  const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -21,7 +23,14 @@ export default function Taskbar({
   }, []);
 
   const handleStartClick = () => {
-    router.push('/login');
+    setIsStartMenuOpen(!isStartMenuOpen);
+  };
+
+  const handleProgramSelect = (programName) => {
+    if (programName === 'Log Off...') {
+      router.push('/login');
+    }
+    setIsStartMenuOpen(false);
   };
 
   const getWindowIcon = (windowId) => {
@@ -52,10 +61,22 @@ export default function Taskbar({
 
   return (
     <div className={styles.taskbar}>
-      <button className={styles.startButton} onClick={handleStartClick}>
+      <button 
+        className={`${styles.startButton} ${isStartMenuOpen ? styles.active : ''}`} 
+        onClick={handleStartClick}
+      >
         <Image src="/windows98.png" alt="Start" width={16} height={16} priority />
         <span>Start</span>
       </button>
+      {isStartMenuOpen && (
+        <>
+          <div className={styles.startMenuOverlay} onClick={() => setIsStartMenuOpen(false)} />
+          <StartMenu 
+            onClose={() => setIsStartMenuOpen(false)}
+            onSelectProgram={handleProgramSelect}
+          />
+        </>
+      )}
       
       <div className={styles.taskbarWindows}>
         {windows?.map(window => (

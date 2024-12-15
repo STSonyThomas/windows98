@@ -1,0 +1,86 @@
+.startMenu {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 200px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-top-color: #dfdfdf;
+  border-left-color: #dfdfdf;
+  border-right-color: #000;
+  border-bottom-color: #000;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  display: flex;
+  z-index: 9999;
+}
+
+.windowsLogo {
+  width: 21px;
+  background: linear-gradient(to bottom, #000080, #1084d0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+.logoText {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  white-space: nowrap;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.windows {
+  font-weight: bold;
+}
+
+.version {
+  margin-left: 2px;
+}
+
+.menuItems {
+  flex: 1;
+  padding: 2px 0;
+}
+
+.menuItem {
+  height: 32px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+}
+
+.menuItem:hover {
+  background-color: #000080;
+  color: white;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.itemText {
+  flex: 1;
+}
+
+.hasSubmenu {
+  position: relative;
+}
+
+.submenuArrow {
+  font-size: 8px;
+  margin-left: 4px;
+}
+
+.separator {
+  height: 1px;
+  margin: 2px 0;
+  background: #808080;
+  border-bottom: 1px solid #ffffff;
+}
