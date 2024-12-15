@@ -9,7 +9,11 @@ export default function Taskbar({
   windows = [], 
   activeWindowId,
   onToggleWindow,
-  onActivateWindow
+  onActivateWindow,
+  activeDocument,
+  cursorLine,
+  openDocuments,
+  activeCodeItem
 }) {
   const router = useRouter();
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
@@ -23,13 +27,10 @@ export default function Taskbar({
   }, []);
 
   const handleStartClick = () => {
-    setIsStartMenuOpen(!isStartMenuOpen);
+    setIsStartMenuOpen(prev => !prev);
   };
 
-  const handleProgramSelect = (programName) => {
-    if (programName === 'Log Off...') {
-      router.push('/login');
-    }
+  const closeStartMenu = () => {
     setIsStartMenuOpen(false);
   };
 
@@ -61,22 +62,31 @@ export default function Taskbar({
 
   return (
     <div className={styles.taskbar}>
-      <button 
-        className={`${styles.startButton} ${isStartMenuOpen ? styles.active : ''}`} 
-        onClick={handleStartClick}
-      >
-        <Image src="/windows98.png" alt="Start" width={16} height={16} priority />
-        <span>Start</span>
-      </button>
-      {isStartMenuOpen && (
-        <>
-          <div className={styles.startMenuOverlay} onClick={() => setIsStartMenuOpen(false)} />
-          <StartMenu 
-            onClose={() => setIsStartMenuOpen(false)}
-            onSelectProgram={handleProgramSelect}
+      <div className={styles.startSection}>
+        <button 
+          className={`${styles.startButton} ${isStartMenuOpen ? styles.active : ''}`}
+          onClick={handleStartClick}
+        >
+          <Image
+            src="/windows-logo.png"
+            alt="Start"
+            width={16}
+            height={16}
+            className={styles.startIcon}
           />
-        </>
-      )}
+          Start
+        </button>
+        {isStartMenuOpen && (
+          <StartMenu 
+            isOpen={isStartMenuOpen}
+            onClose={closeStartMenu}
+            activeDocument={activeDocument}
+            cursorLine={cursorLine}
+            openDocuments={openDocuments}
+            activeCodeItem={activeCodeItem}
+          />
+        )}
+      </div>
       
       <div className={styles.taskbarWindows}>
         {windows?.map(window => (

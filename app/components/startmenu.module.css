@@ -1,86 +1,107 @@
-.startMenu {
-  position: absolute;
-  bottom: 28px;
+.overlay {
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 200px;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 998;
+}
+
+.startMenu {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 320px;
   background: #c0c0c0;
-  border: 2px solid;
-  border-top-color: #dfdfdf;
-  border-left-color: #dfdfdf;
-  border-right-color: #000;
-  border-bottom-color: #000;
-  font-family: 'MS Sans Serif', sans-serif;
-  font-size: 11px;
-  display: flex;
-  z-index: 9999;
+  border: 2px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+  box-shadow: 1px 1px 0 black;
+  z-index: 999;
 }
 
-.windowsLogo {
-  width: 21px;
-  background: linear-gradient(to bottom, #000080, #1084d0);
+.banner {
+  height: 54px;
+  background: linear-gradient(to right, #000080, #1084d0);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 8px;
-}
-
-.logoText {
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  white-space: nowrap;
+  align-items: center;
+  padding: 0 8px;
   color: white;
-  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
 }
 
-.windows {
+.windows98 {
+  font-size: 24px;
   font-weight: bold;
+  margin-right: 4px;
 }
 
-.version {
-  margin-left: 2px;
+.ninety8 {
+  font-size: 24px;
 }
 
-.menuItems {
-  flex: 1;
-  padding: 2px 0;
+.systemInfo {
+  background: #c0c0c0;
+  padding: 8px;
+  border-bottom: 1px solid #848484;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+}
+
+.timeDisplay {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.activeDocument,
+.cursorInfo,
+.codeItem {
+  color: #222;
+  margin: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menuContent {
+  padding: 2px;
 }
 
 .menuItem {
-  height: 32px;
-  padding: 4px 8px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  cursor: default;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: black;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
 }
 
 .menuItem:hover {
-  background-color: #000080;
+  background: #000080;
   color: white;
+}
+
+.menuItemContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .icon {
   width: 16px;
   height: 16px;
-  margin-right: 4px;
-}
-
-.itemText {
-  flex: 1;
+  object-fit: contain;
 }
 
 .hasSubmenu {
   position: relative;
 }
 
-.submenuArrow {
+.hasSubmenu::after {
+  content: '►';
+  position: absolute;
+  right: 8px;
   font-size: 8px;
-  margin-left: 4px;
-}
-
-.separator {
-  height: 1px;
-  margin: 2px 0;
-  background: #808080;
-  border-bottom: 1px solid #ffffff;
 }

@@ -1,0 +1,110 @@
+.container {
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.score {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.closeButton {
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.closeButton:active {
+  border: 2px solid #848484;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.gameArea {
+  background: #000;
+  position: relative;
+  border: 2px solid #848484;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.snakeSegment {
+  background: #00ff00;
+  position: absolute;
+  border: 1px solid #008000;
+}
+
+.food {
+  background: #ff0000;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #c0c0c0;
+  padding: 16px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+}
+
+.resetButton {
+  background: #c0c0c0;
+  border: 2px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+  padding: 4px 12px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+}
+
+.resetButton:active {
+  border: 2px solid #848484;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.controls {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.controls p {
+  margin: 4px 0;
+}
