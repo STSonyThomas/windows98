@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Window from './Window';
 import Portfolio from './Portfolio';
+import CommandPrompt from './CommandPrompt';
 import styles from '../desktop/desktop.module.css';
 
 const desktopIcons = [
@@ -15,6 +16,11 @@ const desktopIcons = [
     id: 'portfolio',
     title: 'portfolio.txt',
     icon: '/portfolio-icon.png'
+  },
+  {
+    id: 'cmd',
+    title: 'Command Prompt',
+    icon: '/cmd-icon.png'
   },
   {
     id: 'recycle',
@@ -122,6 +128,17 @@ export default function HomeScreen({
               onMinimize={() => onMinimizeWindow(window.id)}
               onMaximize={() => onMaximizeWindow(window.id)}
               isMaximized={window.isMaximized}
+              onActivate={() => onActivateWindow(window.id)}
+            />
+          );
+        }
+
+        if (window.id === 'cmd') {
+          return (
+            <CommandPrompt
+              key={window.id}
+              isActive={window.id === activeWindowId}
+              onClose={() => onCloseWindow(window.id)}
               onActivate={() => onActivateWindow(window.id)}
             />
           );
